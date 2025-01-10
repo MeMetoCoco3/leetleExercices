@@ -16,4 +16,11 @@ def solve(nums):
     return nums[-1] + 1
 
 
-print(solve([7, 8, 9, 11, 12]))
+def solve2(nums):
+    nums = [x for x in nums if x > 0]
+    cnt = sum(nums)
+    cnt2 = sum(range(min(nums), max(nums) + 1))
+    return cnt2 - cnt
+
+
+print(solve2([3, 4, -1, 1]))
