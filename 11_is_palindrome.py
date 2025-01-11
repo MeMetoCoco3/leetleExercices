@@ -8,13 +8,12 @@ def solve(s):
     f = 0
     l = len(s) - 1
     s = s.lower()
-    if len(s) == 2:
-        return s[1] == s[0]
+
     while f < l:
-        if not s[f].isalpha():
+        if not s[f].isalnum():
             f += 1
             continue
-        if not s[l].isalpha():
+        if not s[l].isalnum():
             l -= 1
             continue
         if s[f] != s[l]:
@@ -24,4 +23,9 @@ def solve(s):
     return True
 
 
-print(solve("A man, a plan, a canal: Panama"))
+def solve2(s):
+    s = [c.lower() for c in s if c.isalnum()]
+    return s == s[::-1]
+
+
+print(solve2("A man, a plan, a canal: Panama"))
