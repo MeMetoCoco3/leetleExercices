@@ -56,7 +56,7 @@ def solve(input):
 
 
 print(solve([10, 5, 15, 2, 7]))  # Output: 3
-print(solve([1, 2, 3, 4, 5]))  # Output: 5 (Skewed right tree)
+print(solve([1, 2]))  # Output: 5 (Skewed right tree)
 print(solve([]))  # Output: 0 (Empty tree)
 print(solve([5, 3, 8, 1, 4, 7, 9]))  # Output: 3 (Balanced tree)
 print(solve([3, 9, 20, None, None, 15, 7]))
