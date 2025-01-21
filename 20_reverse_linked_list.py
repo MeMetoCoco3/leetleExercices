@@ -10,9 +10,9 @@ def solve(head):
     prev = None
 
     while curr:
-        temp_next = curr.next
+        temp = curr.next
         curr.next = prev
         prev = curr
-        curr = temp_next
+        curr = temp
 
     return head

@@ -36,6 +36,15 @@ class TreeNode:
         if self.right is not None:
             self.right.print_tree()
 
+    def check_depth2(self):
+        if self.val is None:
+            return 0
+
+        l_depth = self.left.check_depth2() if self.left is not None else 0
+        r_depth = self.right.check_depth2() if self.right is not None else 0
+
+        return max(l_depth, r_depth) + 1
+
     def check_depth(self):
         if self.val is None:
             return 0
@@ -48,11 +57,11 @@ class TreeNode:
 def solve(input):
     tree = TreeNode()
     if not input:
-        return tree.check_depth()
+        return tree.check_depth2()
     tree.add_node(input[0])
     for i in input[1:]:
         tree.add_node(i)
-    return tree.check_depth()
+    return tree.check_depth2()
 
 
 print(solve([10, 5, 15, 2, 7]))  # Output: 3
