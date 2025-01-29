@@ -14,3 +14,13 @@ def solve(n):
             return True
         curr = curr * 2
     return False
+
+
+def solve2(n):
+    return n > 0 and (n & n - 1) == 0
+
+
+print(solve2(32))
+print(solve2(22))
+print(solve2(0))
+print(solve2(8))
