@@ -1,0 +1,26 @@
+"""
+44. Longest Palindromic Substring
+
+Write a function solve that finds the longest palindromic substring in a string.
+"""
+
+
+def solve(s):
+    curr = start = 0
+    longest = ""
+    for _, _ in enumerate(s):
+        current = s[start:longest]
+        if is_palindrome(current) and len(current) > len(longest):
+            longest = current
+        else:
+            curr += 1
+    return longest
+
+
+def is_palindrome(s):
+    return s == s[::-1]
+
+
+print(is_palindrome("abcba"))
+
+print(is_palindrome("abacba"))
