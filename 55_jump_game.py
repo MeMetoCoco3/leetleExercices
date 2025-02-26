@@ -12,10 +12,10 @@ def solve(nums):
     current_position = 1
     step = nums[current_position]
     for _ in nums[1:]:
-        if len(nums) <= current_position:
-            return False
         if len(nums) == current_position + 1:
             return True
+        if len(nums) <= current_position or step == 0:
+            return False
 
         current_position += step
         step = nums[current_position]
